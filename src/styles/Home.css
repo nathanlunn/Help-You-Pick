@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__title {
+  margin-top: 2rem;
+  width:  50%;
+}
+
+.home__setupContainer {
+  margin-top: 4rem;
+}
+
+.home__button {
+  padding: 1rem;
+  background-color: rgba(27, 158, 202, 0.138);
+  border: 3px solid rgba(0, 0, 0, 0.625);
+  border-radius: 10px;
+}
+
+.home__button--rollNumber {
+  width: 2rem;
+}
+
+.home__button--startChoosing {
+  color: cyan;
+  font-size: 2rem;
+}

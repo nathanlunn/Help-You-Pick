@@ -30,6 +30,7 @@ function App() {
     rightSideOption: {},
     winner: {},
     genreFilter: '',
+    playing: false,
   })
 
 
