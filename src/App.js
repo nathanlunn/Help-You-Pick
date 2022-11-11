@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Home from './Home.js';
+import background from './assets/background.mp4';
 
 function App() {
   const roll = () => {
@@ -30,8 +31,15 @@ function App() {
     genreFilter: '',
   })
 
+
   return (
     <div className="App">
+      <video 
+        src={background}
+        autoPlay 
+        muted 
+        loop
+      />
       {state.leftSideOption.attributes && (<Home 
         state={state}
         setState={setState}
