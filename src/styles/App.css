@@ -14,5 +14,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  bottom: 0;
+  height: 100vh;
+  object-fit: fill;
 }
