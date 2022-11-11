@@ -1,8 +1,50 @@
 .animeChoice {
-
+  background-color: rgba(17, 32, 163, 0.283);
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 90%;
 }
 
 .animeChoice__image {
-  height: 22rem;
+  height: 18rem;
   width: 14rem;
+  border-radius: 6px 0 0 0;
+  border-right: 2px solid black;
+}
+
+.animeChoice__upperContainer {
+  display: flex;
+}
+
+.animeChoice__basicInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: .3rem;
+}
+
+.animeChoice__infoBlock {
+  /* display: flex; */
+}
+
+.animeChoice__category {
+  color: cyan;
+  margin-right: .4rem;
+}
+
+.animeChoice__info {
+  color: white;
+}
+
+.animeChoice__synopsis {
+  border-top: 2px solid black;
+  font-size: 1.2rem;
+}
+
+.animeChoice__button--readMore {
+  padding: .1rem;
+}
+.animeChoice__button--readMore:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.489);
 }

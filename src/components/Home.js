@@ -34,7 +34,7 @@ export default function Home({state, setState}) {
   }, [state.replace])
 
   const reset = () => {
-    setState(prev => ({...prev, playing: false, leftSideOption: {}, rightSideOption: {}, replace: ''}))
+    setState(prev => ({...prev, playing: false, leftSideOption: {}, rightSideOption: {}, replace: '', numberOfRounds: 5}))
   }
 
   return (
@@ -85,13 +85,11 @@ export default function Home({state, setState}) {
             `${state.numberOfRounds - state.round} rounds left`
           )}</h3>
           <div className='home__battleContainer'>
-            <div className='home__leftSideOption'>
-              <AnimeChoice
-                state={state}
-                setState={setState}
-                anime={state.leftSideOption}
-              />
-            </div>
+            <AnimeChoice
+              state={state}
+              setState={setState}
+              anime={state.leftSideOption}
+            />
             <AnimeChoice 
               state={state}
               setState={setState}

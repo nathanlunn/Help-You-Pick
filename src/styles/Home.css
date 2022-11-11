@@ -73,7 +73,7 @@
 }
 
 .home__playingContainer {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,6 +83,7 @@
   font-family: 'Big Shoulders Text', cursive;
   font-size: 3rem;
   color: white;
+  margin-bottom: 1rem;
 }
 
 .home__battleContainer {
