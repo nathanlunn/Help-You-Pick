@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Home from './Home.js';
+import Home from './components/Home.js';
 import background from './assets/background.mp4';
+import './styles/App.css';
 
 function App() {
   const roll = () => {
@@ -35,6 +36,7 @@ function App() {
   return (
     <div className="App">
       <video 
+        className='background'
         src={background}
         autoPlay 
         muted 
