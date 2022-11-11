@@ -11,6 +11,9 @@
 
 .home__setupContainer {
   margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home__button {
@@ -20,11 +23,29 @@
   border-radius: 10px;
 }
 
+.home__rollNumberDescription {
+  font-family: 'Sono', sans-serif;
+  color: white;
+  font-size: 1.3rem;
+}
+
 .home__button--rollNumber {
-  width: 2rem;
+  color: rgb(122, 231, 122);
+  font-size: 3rem;
+  margin: .5rem;
 }
 
 .home__button--startChoosing {
   color: cyan;
   font-size: 2rem;
+}
+
+.home__rollContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hide {
+  opacity: 0;
 }
