@@ -33,6 +33,10 @@ export default function Home({state, setState}) {
     }
   }, [state.replace])
 
+  const reset = () => {
+    setState(prev => ({...prev, playing: false, leftSideOption: {}, rightSideOption: {}, replace: ''}))
+  }
+
   return (
     <div className='home'>
       <img 
@@ -49,7 +53,7 @@ export default function Home({state, setState}) {
           <h2 className='home__rollNumberDescription'>Number Of Rounds:</h2>
           <div className='home__rollContainer'>
             <button
-              className={state.numberOfRounds > 5 ? 'home__button home__button--rollManipulate' : 'home__button home__button--rollManipulate hide'}
+              className={state.numberOfRounds > 5 ? 'home__button home__button--rollManipulate home__button--less' : 'home__button home__button--rollManipulate hide'}
               onClick={() => {
                 if (state.numberOfRounds > 5) {
                   setState(prev => ({...prev, numberOfRounds: state.numberOfRounds - 1}))
@@ -58,7 +62,7 @@ export default function Home({state, setState}) {
             >{left}</button>
             <div className='home__button home__button--rollNumber'>{state.numberOfRounds}</div>
             <button
-              className={state.numberOfRounds < 10 ? 'home__button home__button--rollManipulate' : 'home__button home__button--rollManipulate hide'}
+              className={state.numberOfRounds < 10 ? 'home__button home__button--rollManipulate home__button--more' : 'home__button home__button--rollManipulate hide'}
               onClick={() => {
                 if (state.numberOfRounds < 10) {
                   setState(prev => ({...prev, numberOfRounds: state.numberOfRounds + 1}))
@@ -81,17 +85,23 @@ export default function Home({state, setState}) {
             `${state.numberOfRounds - state.round} rounds left`
           )}</h3>
           <div className='home__battleContainer'>
-            <AnimeChoice
-              state={state}
-              setState={setState}
-              anime={state.leftSideOption}
-            />
+            <div className='home__leftSideOption'>
+              <AnimeChoice
+                state={state}
+                setState={setState}
+                anime={state.leftSideOption}
+              />
+            </div>
             <AnimeChoice 
               state={state}
               setState={setState}
               anime={state.rightSideOption}
             /> 
           </div>
+          <button
+          className='home__button home__button--back'
+          onClick={reset}
+          >BACK</button>
         </div>
       )}
     </div>

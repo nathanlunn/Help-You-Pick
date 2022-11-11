@@ -44,9 +44,26 @@
   margin: .5rem;
 }
 
+.home__button--more:hover {
+  cursor: pointer;
+  background-color: rgba(6, 95, 6, 0.714);
+  color: white;
+}
+
+.home__button--less:hover {
+  cursor: pointer;
+  background-color: rgba(109, 8, 8, 0.714);
+  color: white;
+}
+
 .home__button--startChoosing {
   color: cyan;
   font-size: 2rem;
+}
+.home__button--startChoosing:hover {
+  cursor: pointer;
+  background-color: rgba(0, 255, 255, 0.621);
+  color: white;
 }
 
 .home__rollContainer {
@@ -70,8 +87,23 @@
 
 .home__battleContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+}
+
+.home__button--back {
+  position: absolute;
+  left: 1rem;
+  bottom: 0rem;
+  font-size: 1.5rem;
+  padding: .3rem;
+  align-self: flex-start;
+  background-color: rgba(48, 159, 219, 0.326);
+  color: rgb(255, 255, 255);
+}
+.home__button--back:hover {
+  cursor: pointer;
+  background-color: rgb(48, 159, 219);
 }
 
 .hide {
