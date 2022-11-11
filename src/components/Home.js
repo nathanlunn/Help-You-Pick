@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Home.css';
 import title from '../assets/hyptitle.png';
+import instructions from '../assets/hypinstruct.png';
 
 export default function Home({state, setState}) {
   const left = '<';
@@ -15,7 +16,11 @@ export default function Home({state, setState}) {
       />
       {!state.playing && (
         <div className='home__setupContainer'>
-          <h2 className='home__rollNumberDescription'>Number Of Choices:</h2>
+          <img 
+            className='home__instructions'
+            src={instructions}
+          />
+          <h2 className='home__rollNumberDescription'>Number Of Rounds:</h2>
           <div className='home__rollContainer'>
             <button
               className={state.numberOfRolls > 5 ? 'home__button home__button--rollManipulate' : 'home__button home__button--rollManipulate hide'}
