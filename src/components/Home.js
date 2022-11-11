@@ -2,14 +2,36 @@ import React, {useState, useEffect} from 'react'
 import '../styles/Home.css';
 import title from '../assets/hyptitle.png';
 import instructions from '../assets/hypinstruct.png';
+import AnimeChoice from './AnimeChoice.js';
+import axios from 'axios';
 
 export default function Home({state, setState}) {
   const left = '<';
   const right = '>';
+  const roll = () => {
+    return Math.floor(Math.random() * 250) + 1;
+  }
 
   useEffect(() => {
-
-  }, [])
+    if (state.replace === 'both') {
+      console.log('here')
+      let rollNumber = roll();
+      axios.get(`https://kitsu.io/api/edge/anime/${rollNumber}`)
+      .then(res => {
+        const anime = res.data.data;
+        setState(prev => ({...prev, leftSideOption: anime}));
+        rollNumber = roll();
+        axios.get(`https://kitsu.io/api/edge/anime/${rollNumber}`)
+        .then(res => {
+          const anime = res.data.data;
+          setState(prev => ({...prev, rightSideOption: anime}));
+        })
+      })
+      .catch(err => {
+        console.error(err.mesage);
+      })
+    }
+  }, [state.replace])
 
   return (
     <div className='home'>
@@ -46,7 +68,7 @@ export default function Home({state, setState}) {
           </div>
           <button
             className='home__button home__button--startChoosing'
-            onClick={() => {setState(prev => ({...prev, playing: true}))}}
+            onClick={() => {setState(prev => ({...prev, playing: true, replace: 'both'}))}}
           >Start Choosing</button>
         </div>
       )}
@@ -58,8 +80,17 @@ export default function Home({state, setState}) {
           ) : (
             `${state.numberOfRounds - state.round} rounds left`
           )}</h3>
-          <div>
-            
+          <div className='home__battleContainer'>
+            <AnimeChoice
+              state={state}
+              setState={setState}
+              anime={state.leftSideOption}
+            />
+            <AnimeChoice 
+              state={state}
+              setState={setState}
+              anime={state.rightSideOption}
+            /> 
           </div>
         </div>
       )}
