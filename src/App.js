@@ -24,13 +24,14 @@ function App() {
   },[])
 
   const [state, setState] = useState({
-    numberOfRolls: 5,
-    roll: 0,
+    numberOfRounds: 5,
+    round: 0,
     leftSideOption: {},
     rightSideOption: {},
     winner: {},
     genreFilter: '',
     playing: false,
+    replace: '',
   })
 
 
