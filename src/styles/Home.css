@@ -92,6 +92,10 @@
   width: 100%;
 }
 
+.home__battlePod {
+  width: 50%
+}
+
 .home__button--back {
   position: absolute;
   left: 1rem;

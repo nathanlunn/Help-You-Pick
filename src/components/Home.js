@@ -85,16 +85,20 @@ export default function Home({state, setState}) {
             `${state.numberOfRounds - state.round} rounds left`
           )}</h3>
           <div className='home__battleContainer'>
-            <AnimeChoice
-              state={state}
-              setState={setState}
-              anime={state.leftSideOption}
-            />
-            <AnimeChoice 
-              state={state}
-              setState={setState}
-              anime={state.rightSideOption}
-            /> 
+            <div className='home__battlePod'>
+              <AnimeChoice
+                state={state}
+                setState={setState}
+                anime={state.leftSideOption}
+              />
+            </div>
+            <div className='home__battlePod'>
+              <AnimeChoice 
+                state={state}
+                setState={setState}
+                anime={state.rightSideOption}
+              /> 
+            </div>
           </div>
           <button
           className='home__button home__button--back'

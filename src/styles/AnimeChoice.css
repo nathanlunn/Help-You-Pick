@@ -4,10 +4,13 @@
   border-radius: 10px;
   width: 90%;
 }
+.animeChoice:hover {
+  cursor:pointer;
+}
 
 .animeChoice__image {
-  height: 18rem;
-  width: 14rem;
+  height: 15rem;
+  width: 12rem;
   border-radius: 6px 0 0 0;
   border-right: 2px solid black;
 }
@@ -39,6 +42,7 @@
 .animeChoice__synopsis {
   border-top: 2px solid black;
   font-size: 1.2rem;
+  font-family: 'Nunito', sans-serif;
 }
 
 .animeChoice__button--readMore {
@@ -47,4 +51,17 @@
 .animeChoice__button--readMore:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.489);
+}
+
+.animeChoice__fullSynopsisContainer {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+.animeChoice__button--back {
+  padding: .4rem;
+  border-radius: 3px;
+  width: 5rem;
 }
