@@ -20,7 +20,10 @@ export default function AnimeChoice({state, setState, anime}) {
         <>
           {fullSynopsis ? (
             <div className='animeChoice animeChoice__fullSynopsisContainer'>
-              <button className='home__button animeChoice__button--back'>BACK</button>
+              <button
+                className='home__button animeChoice__button--back'
+                onClick={() => {setFullSynopsis(false)}}
+              >BACK</button>
               {anime.attributes.synopsis}
             </div>
           ) : (
