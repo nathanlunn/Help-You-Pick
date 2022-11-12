@@ -55,7 +55,7 @@ export default function Home({state, setState}) {
   }, [state.replace])
 
   const reset = () => {
-    setState(prev => ({...prev, playing: false, leftSideOption: {}, rightSideOption: {}, replace: '', numberOfRounds: 5}))
+    setState(prev => ({...prev, playing: false, leftSideOption: {}, rightSideOption: {}, replace: '', numberOfRounds: 5, round: 0}))
   }
 
   return (
