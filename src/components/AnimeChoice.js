@@ -11,7 +11,7 @@ export default function AnimeChoice({state, setState, anime}) {
   }
 
   const choice = () => {
-
+    console.log('chosen');
   }
 
   return (
@@ -57,7 +57,10 @@ export default function AnimeChoice({state, setState, anime}) {
                 <h4 className='animeChoice__info'>
                   {shortSynopsis}<button 
                     className='home__button animeChoice__button--readMore'
-                    onClick={() => {setFullSynopsis(true)}}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setFullSynopsis(true);
+                    }}
                   >Read More</button>
                 </h4>
               </div>
