@@ -59,6 +59,7 @@
   flex-direction: column;
   color: white;
   font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
 }
 
 .animeChoice__button--back {

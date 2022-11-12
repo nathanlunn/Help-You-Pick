@@ -13,9 +13,8 @@ export default function Home({state, setState}) {
   }
 
   useEffect(() => {
+    let rollNumber = roll();
     if (state.replace === 'both') {
-      console.log('here')
-      let rollNumber = roll();
       axios.get(`https://kitsu.io/api/edge/anime/${rollNumber}`)
       .then(res => {
         const anime = res.data.data;
@@ -26,6 +25,28 @@ export default function Home({state, setState}) {
           const anime = res.data.data;
           setState(prev => ({...prev, rightSideOption: anime}));
         })
+      })
+      .catch(err => {
+        console.error(err.mesage);
+      })
+    }
+
+    if (state.replace === 'right') {
+      axios.get(`https://kitsu.io/api/edge/anime/${rollNumber}`)
+      .then(res => {
+        const anime = res.data.data;
+        setState(prev => ({...prev, rightSideOption: anime, round: state.round + 1, replace: ''}));
+      })
+      .catch(err => {
+        console.error(err.mesage);
+      })
+    }
+
+    if (state.replace === 'left') {
+      axios.get(`https://kitsu.io/api/edge/anime/${rollNumber}`)
+      .then(res => {
+        const anime = res.data.data;
+        setState(prev => ({...prev, leftSideOption: anime, round: state.round + 1, replace: ''}));
       })
       .catch(err => {
         console.error(err.mesage);

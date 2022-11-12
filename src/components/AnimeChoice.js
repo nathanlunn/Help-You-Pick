@@ -11,7 +11,15 @@ export default function AnimeChoice({state, setState, anime}) {
   }
 
   const choice = () => {
-    console.log('chosen');
+    if (state.numberOfRounds - state.round === 1) {
+      setState(prev => ({...prev, winner: anime, round: 0, numberOfRounds: 5}));
+      console.log('winner');
+    }
+    if (anime.attributes.canonicalTitle === state.leftSideOption.attributes.canonicalTitle) {
+      setState(prev => ({...prev, replace: 'right'}));
+      return;
+    }
+    setState(prev => ({...prev, replace: 'left'}));
   }
 
   return (
