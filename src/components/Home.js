@@ -137,13 +137,18 @@ export default function Home({state, setState}) {
             className='home__winnerImage'
             src={state.winner.attributes.posterImage.small}
           />
-          <div>
+          <div className='home__linkNameContainer'>
+            <img className='home__googleSearch hide' src={google}/>
             <h3 className='home__winnerName'>{state.winner.attributes.canonicalTitle}</h3>
-            <img className='home__googleSearch' src={}/>
+            <a href={`https://www.google.com/search?q=${state.winner.attributes.canonicalTitle}`} target='_blank'><img className='home__googleSearch' src={google}/></a>
           </div>
           <button
-          className='home__button home__button--back'
-          onClick={reset}
+            className='home__button home__button--playAgain'
+            onClick={reset}
+          >PLAY AGAIN</button>
+          <button
+            className='home__button home__button--back'
+            onClick={reset}
           >BACK</button>
         </div>
       )}

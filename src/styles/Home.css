@@ -135,10 +135,35 @@
   margin: 1.5rem 0 .5rem 0;
 }
 
+.home__linkNameContainer {
+  display: flex;
+}
+
 .home__winnerName {
   color: rgb(46, 172, 222);
   font-family: 'Permanent Marker', cursive;
   font-size: 2rem;
+  margin: 0 1rem;
+}
+
+.home__googleSearch {
+  height: 2rem;
+  width: 2rem;
+  padding: .2rem;
+  background-color: rgba(27, 158, 202, 0.386);
+  border: 3px solid rgba(0, 0, 0, 0.625);
+  border-radius: 10px;
+}
+
+.home__button--playAgain {
+  color: white;
+  padding: .5rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+.home__button--playAgain:hover {
+  cursor: pointer;
+  background-color: rgba(0, 255, 255, 0.627);
 }
 
 .hide {
