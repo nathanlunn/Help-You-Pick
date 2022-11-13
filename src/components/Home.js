@@ -130,7 +130,11 @@ export default function Home({state, setState}) {
 
       {state.playing && state.winner.attributes && (
         <div className='home__winnerContainer'>
-
+          <h3>WINNER!</h3>
+          <img 
+            className='home__winnerImage'
+            src={state.winner.attributes.posterImage.small}
+          />
           <button
           className='home__button home__button--back'
           onClick={reset}
