@@ -99,7 +99,7 @@
 .home__button--back {
   position: absolute;
   left: 1rem;
-  bottom: 0rem;
+  top: 1rem;
   font-size: 1.5rem;
   padding: .3rem;
   align-self: flex-start;

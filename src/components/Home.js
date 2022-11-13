@@ -55,7 +55,7 @@ export default function Home({state, setState}) {
   }, [state.replace])
 
   const reset = () => {
-    setState(prev => ({...prev, playing: false, leftSideOption: {}, rightSideOption: {}, replace: '', numberOfRounds: 5, round: 0}))
+    setState(prev => ({...prev, playing: false, leftSideOption: {}, rightSideOption: {}, winner: {}, replace: '', numberOfRounds: 5, round: 0}))
   }
 
   return (
@@ -98,7 +98,7 @@ export default function Home({state, setState}) {
         </div>
       )}
 
-      {state.playing && (
+      {state.playing && !state.winner.attributes && (
         <div className='home__playingContainer'>
           <h3 className='home__roundsLeft'>{state.numberOfRounds - state.round === 1 ? (
             `${state.numberOfRounds - state.round} round left`
@@ -121,6 +121,16 @@ export default function Home({state, setState}) {
               /> 
             </div>
           </div>
+          <button
+          className='home__button home__button--back'
+          onClick={reset}
+          >BACK</button>
+        </div>
+      )}
+
+      {state.playing && state.winner.attributes && (
+        <div className='home__winnerContainer'>
+
           <button
           className='home__button home__button--back'
           onClick={reset}
