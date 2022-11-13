@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import '../styles/Home.css';
 import title from '../assets/hyptitle.png';
 import instructions from '../assets/hypinstruct.png';
+import google from '../assets/goog.png';
 import AnimeChoice from './AnimeChoice.js';
 import axios from 'axios';
 
@@ -131,10 +132,15 @@ export default function Home({state, setState}) {
       {state.playing && state.winner.attributes && (
         <div className='home__winnerContainer'>
           <h3 className='home__winningTitle'>WINNER!</h3>
+          <h3 className='home__winningTitle home__winningTitleDescription'>The Next Anime on Your Watch List is:</h3>
           <img 
             className='home__winnerImage'
             src={state.winner.attributes.posterImage.small}
           />
+          <div>
+            <h3 className='home__winnerName'>{state.winner.attributes.canonicalTitle}</h3>
+            <img className='home__googleSearch' src={}/>
+          </div>
           <button
           className='home__button home__button--back'
           onClick={reset}
