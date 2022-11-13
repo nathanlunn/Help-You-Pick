@@ -4,6 +4,10 @@ import '../styles/AnimeChoice.css';
 export default function AnimeChoice({state, setState, anime}) {
   const [fullSynopsis, setFullSynopsis] = useState(false);
 
+  useEffect(() => {
+    setFullSynopsis(false);
+  }, [anime])
+
   let shortSynopsis;
 
   if(state.leftSideOption.attributes && state.rightSideOption.attributes) {
